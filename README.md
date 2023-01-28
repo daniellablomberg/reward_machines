@@ -40,8 +40,19 @@ The code has the following requirements:
 - OpenAI Gym
 - [OpenAI Baselines](https://github.com/openai/baselines)
 
-However, the only *real* requirement is to have installed the master branch of Baselines. Installing baselines is not trivial, though. Their master branch only supports Tensorflow from version 1.4 to 1.14. These versions of Tensorflow seem to work fine with Python 3.6 and 3.7, but they **do not** work with Python 3.8+. We also included a [requirements.txt](requirements.txt) file as a reference, but note that such a file includes more libraries than the ones strictly needed to run our code.
+However, the only *real* requirement is to have installed the master branch of Baselines. Installing baselines is not trivial, though. Their master branch only supports Tensorflow from version 1.4 to 1.14. These versions of Tensorflow seem to work fine with Python 3.6 and 3.7, but they **do not** work with Python 3.8+. 
 
+To set up your environment:
+* Install Python 3.7
+* Create a virtualenv
+* In the virtualenv, run:
+    * `pip install tensorflow==1.14.0`
+    * `pip install -r requirements.txt`
+
+Try out your installation by running:
+```bash
+(cd reward_machines && python run.py --alg=qlearning --env=Office-v0 --num_timesteps=1e5 --gamma=0.9 --log_path=../my_results/ql/office/mytest1)
+```
 
 ## How to run the code
 
